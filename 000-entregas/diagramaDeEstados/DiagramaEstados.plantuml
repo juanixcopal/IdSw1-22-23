@@ -1,0 +1,12 @@
+@startuml DiagramDeEstadosNotificacion
+
+(*) --> "Read_Wan_States"
+    if "Wan_States" then
+      ->[activo] (*)
+ 
+    else
+      -->[inactivo] "Create_Notification"
+      --> (*)
+    endif
+
+@enduml

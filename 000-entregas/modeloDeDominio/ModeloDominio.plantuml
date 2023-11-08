@@ -1,0 +1,28 @@
+@startuml ModeloDeDominio
+class Usuario
+class Wan
+class Router
+class Ubicacion
+class Firewall
+class Switch
+class Dispositivo
+class Notificacion
+
+Usuario --o Wan : gestiona >
+
+
+Wan *-l- Ubicacion : posee >
+Wan *-r- Proveedor : tiene >
+Wan *-- Router : contiene >
+
+Notificacion -l-* Usuario : Notifica >
+Notificacion *-- Wan : Crea <
+
+Router *-- Firewall : posee >
+Firewall *-- Switch : gestiona >
+
+Switch *-- VLan : contiene >
+VLan *-l- Dispositivo : gestiona >
+
+
+@enduml
